@@ -18,7 +18,7 @@ Vector <TableRecord> top_storedm = app_sm.selectAll(tbldm,"dm_code=? and dm_lang
 Vector<TableRecord> top_about = app_sm.selectAll(tblcp,"cp_code=? and cp_lang=?",new Object[]{"about", lang},"cp_showseq ASC, cp_createdate DESC");
 //讀取首頁文案資料
 TableRecord index_about = app_sm.select(tblcp , "cp_lang=? and cp_code=?",new Object[] { lang , "index_about"});
-//讀取最新消息資料
+//讀取最新消息資料1
 TableRecord index_news = app_sm.select(tblcp , "cp_lang=? and cp_code=?",new Object[] { lang , "index_news"});
 //最新消息資料-限前4
 Vector <TableRecord> top_news = app_sm.selectAll(tblnp, "np_code=? AND np_lang =?  AND NOT(np_emitdate>? OR np_restdate<?)", new Object[]{"news", lang, app_today, app_today }, "np_emitdate DESC , np_createdate DESC limit 4");
